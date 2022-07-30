@@ -1,9 +1,10 @@
-import { Button, Icon, Input } from '@rneui/themed';
+import { Icon, Input } from '@rneui/themed';
 import React, { useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import { Header } from '@react-navigation/elements';
 import { RootStackScreenProps } from '../../types';
 import { useAddPostMutation } from '../../utils/model/posts/mutation';
+import { Button } from '../../components/elements/Button';
 
 export default function ModalScreen({ navigation }: RootStackScreenProps<'Modal'>) {
   const [url, setUrl] = useState<string>();

@@ -14,13 +14,14 @@ const theme = createTheme({
       paddingHorizontal: 8,
       paddingVertical: 20,
       borderRadius: 12,
+      backgroundColor: '#eee',
     },
     inputContainerStyle: {
       borderBottomWidth: 0,
     },
   },
   Chip: { buttonStyle: { marginTop: 10, paddingVertical: 8, borderRadius: 50 } },
-  ListItemContent: { style: { paddingVertical: 4 } },
+  ListItemContent: { style: { paddingVertical: 8 } },
   ListItem: { containerStyle: { borderRadius: 12 } },
   ListItemTitle: { style: { fontSize: 14, fontWeight: 'bold' } },
 });
