@@ -15,6 +15,7 @@ export function useAddPostMutation(): Mutation<{ url: string }, void> {
   const [loading, setLoading] = useState(false);
   const postsRef = getPostsCollectionRef(user?.uid);
   const func = async ({ url }: { url: string }) => {
+    setLoading(true);
     const res = await fetchOgp(url);
     await addDoc(postsRef, res);
     setLoading(false);
