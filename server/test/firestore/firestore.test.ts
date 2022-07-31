@@ -67,9 +67,9 @@ describe('users collection', () => {
     await firebase.assertSucceeds(addDoc(collection(db, `users/${uid}/posts`), { title: 'hoge' }));
   });
 
-  // it('自身の投稿以外にアクセスしようとすると失敗する', async () => {
-  //   const authenticatedContext = testEnv.authenticatedContext(uid, tokenOptions);
-  //   const db = authenticatedContext.firestore();
-  //   await firebase.assertFails(getDoc(doc(db, 'users', otherUid)));
-  // });
+  it('自分以外のposts collectionに追加しようとすると失敗する', async () => {
+    const authenticatedContext = testEnv.authenticatedContext(uid, tokenOptions);
+    const db = authenticatedContext.firestore();
+    await firebase.assertFails(addDoc(collection(db, `users/${otherUid}/posts`), { title: 'hoge' }));
+  });
 });
